@@ -11,6 +11,7 @@ public class Player {
     // Human-friendly date/time for UI display (e.g., 12 Mar 2026, 2:35 PM)
     private static final DateTimeFormatter DISPLAY_DATE_TIME_FORMATTER =
             DateTimeFormatter.ofPattern("dd MMM yyyy, h:mm a", Locale.UK);
+    private static final String PLAYER_FILE = "data/players.csv";
 
     private String playerName; // The name of the player
     private int highScore; // The player's high score
@@ -67,9 +68,9 @@ public class Player {
      * Appends the player's CSV representation to the end of the file.
      */
     public void savePlayerData() {
-        java.util.ArrayList<String> data = FIleIO.readFileData("players.csv");
+        java.util.ArrayList<String> data = FIleIO.readFileData(PLAYER_FILE);
         data.add(this.CSVStr());
-        FIleIO.writeFileData("players.csv", data);
+        FIleIO.writeFileData(PLAYER_FILE, data);
     }
     /**
      * Gets the player's high score.

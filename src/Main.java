@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 
@@ -19,7 +18,7 @@ public class Main {
         players.set(PLAYER_INDEX, p.CSVStr());
         System.out.println("Updated");
         System.out.println(p);
-        FIleIO.writeFileData("players.csv", players);
+        FIleIO.writeFileData(PLAYER_FILE, players);
 
     }
 }
